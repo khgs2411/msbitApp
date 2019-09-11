@@ -1,0 +1,65 @@
+<div
+  (click)="this.service.displayInfo(fedex)"
+  class="row"
+  *ngIf="product.type == 1"
+>
+  <div class="col-sm-2">
+    <img src="{{ fedex.thumbnailUrl }}" alt="No image found" />
+  </div>
+  <div class="col-sm-8 text-left ">
+    <div>{{ fedex.name }}</div>
+    <div>{{ fedex.description }}</div>
+  </div>
+  <div class="col-sm-2">
+    <button
+      (click)="this.service.deleteProduct(fedex)"
+      class="btn btn-danger mt-85"
+    >
+      Delete
+    </button>
+  </div>
+</div>
+<div *ngIf="product.type == 2">
+  <div (click)="this.service.displayInfo(ups)" class="row">
+    <div class="col-sm-2">
+      <img src="{{ ups.thumbnailUrl }}" alt="No image found" />
+    </div>
+    <div class="col-sm-8 text-left ">
+      <div>
+        {{ ups.name }}
+      </div>
+      <div>
+        {{ ups.description }}
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <button
+        (click)="this.service.deleteProduct(ups)"
+        class="btn btn-danger mt-85"
+      >
+        Delete
+      </button>
+    </div>
+  </div>
+</div>
+<div
+  class="row"
+  (click)="this.service.displayInfo(product)"
+  *ngIf="product.type == 3"
+>
+  <div class="col-sm-2">
+    <img src="{{ third.thumbnailUrl }}" alt="" />
+  </div>
+  <div class="col-sm-8 text-left ">
+    <div>{{ third.name }}</div>
+    <div>{{ third.description }}</div>
+  </div>
+  <div class="col-sm-2">
+    <button
+      (click)="this.service.deleteProduct(third)"
+      class="btn btn-danger mt-85"
+    >
+      Delete
+    </button>
+  </div>
+</div>
